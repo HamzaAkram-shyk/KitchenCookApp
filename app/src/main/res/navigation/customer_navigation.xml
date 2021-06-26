@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/customer_navigation"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.apnakitchen.userdashboard.ui.home.HomeFragment"
+        android:label="home_fragment"
+        tools:layout="@layout/home_fragment" />
+    <fragment
+        android:id="@+id/navigation_nearby"
+        android:name="com.example.apnakitchen.userdashboard.ui.nearby.NearByFragment"
+        android:label="near_by_fragment"
+        tools:layout="@layout/near_by_fragment" />
+    <fragment
+        android:id="@+id/navigation_currentOrder"
+        android:name="com.example.apnakitchen.userdashboard.ui.currentorder.OrderFragment"
+        android:label="customer_current_order"
+        tools:layout="@layout/customer_current_order" />
+
+
+    <fragment
+        android:id="@+id/navigation_customer_profile"
+        android:name="com.example.apnakitchen.userdashboard.ui.profile.ProfileFragment"
+        android:label="customer_profile"
+        tools:layout="@layout/customer_profile" />
+    <fragment
+        android:id="@+id/navigation_deliverOrder"
+        android:name="com.example.apnakitchen.userdashboard.ui.deliver.DeliverOrder"
+        android:label="DeliverOrder"
+        tools:layout="@layout/deliver_order_fragment"
+        />
+</navigation>

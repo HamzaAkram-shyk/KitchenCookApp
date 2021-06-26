@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_order">
+
+    <fragment
+        android:id="@+id/navigation_dishes"
+        android:name="com.example.apnakitchen.cookdashboard.ui.dishes.DishesFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dish" />
+
+    <fragment
+        android:id="@+id/navigation_sale"
+        android:name="com.example.apnakitchen.cookdashboard.ui.sale.SaleFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_sale" />
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.apnakitchen.cookdashboard.ui.profile.ProfileFragment"
+        android:label="profile_fragment"
+        tools:layout="@layout/cook_profile" />
+    <fragment
+        android:id="@+id/navigation_order"
+        android:name="com.example.apnakitchen.cookdashboard.ui.order.OrderFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_order" />
+</navigation>

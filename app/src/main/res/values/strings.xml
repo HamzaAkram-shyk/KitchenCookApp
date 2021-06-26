@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">ApnaKitchen</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_cook_dashboard">COOK DASHBOARD</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="CookAbout">Introduce yourself to your Customers it will be Helpful to get the Order Go to above menu and add your Introduction</string>
+    <string name="Cook_Address">No Kitchen Address Detected</string>
+    <string name="LocationNote">Add your Kitchen address into your profile It gives the boast your dishes for your Near by Customers to Catch you just
+        click on the location button and set your current location as Kitchen Address</string>
+
+    <string name="Service_NotAvailable">There is No Service Provider is Available Your Near By</string>
+    <integer name="channel_name">1</integer>
+
+    <string-array name="FoodCategories">
+        <item>DesiFood</item>
+        <item>Biryani</item>
+        <item>FastFood</item>
+        <item>chinese</item>
+        <item>Pizza</item>
+        <item>Barbecue</item>
+        <item>Dessert</item>
+        <item>Snacks</item>
+        <item>juice</item>
+    </string-array>
+
+    <string-array name="SalePercentage">
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>50</item>
+        <item>60</item>
+    </string-array>
+</resources>

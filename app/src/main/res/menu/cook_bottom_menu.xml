@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/navigation_order"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="Orders" />
+
+    <item
+        android:id="@+id/navigation_dishes"
+        android:icon="@drawable/food_icon"
+        android:title="Dishes" />
+
+    <item
+        android:id="@+id/placeholder"
+        android:title=""
+        />
+    <item
+        android:id="@+id/navigation_sale"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="Sale" />
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/profile_pin_24"
+        android:title="Profile" />
+</menu>

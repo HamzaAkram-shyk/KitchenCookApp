@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1060514805777",
+    "project_id": "stalwart-realm-241910",
+    "storage_bucket": "stalwart-realm-241910.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1060514805777:android:1c8d73df3d87625cbed9b0",
+        "android_client_info": {
+          "package_name": "com.example.apnakitchen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1060514805777-cng4nrk768gbfg1mb6iptibvplqtuteo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.apnakitchen",
+            "certificate_hash": "a143c809028f5de05d71e906aecc0f2dd9ab589e"
+          }
+        },
+        {
+          "client_id": "1060514805777-76su4e2907qudrot8bk3rhdlsob4plfd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUKubedaPYtFOZYUQo0aeaxw3gFCLVNAA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1060514805777-76su4e2907qudrot8bk3rhdlsob4plfd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

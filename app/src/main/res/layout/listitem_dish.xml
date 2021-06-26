@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/dish_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/r"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent=".4" />
+
+        <TextView
+            android:id="@+id/dish_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Biryani"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/dish_image"
+            app:layout_constraintStart_toEndOf="@id/dish_image"
+            app:layout_constraintTop_toTopOf="@id/dish_image"
+            app:layout_constraintVertical_bias="0.1" />
+
+        <TextView
+            android:id="@+id/dish_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Pkr: 340"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/dish_title"
+            app:layout_constraintTop_toBottomOf="@id/dish_title" />
+
+        <TextView
+            android:id="@+id/dish_timing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CookTime: 34 mint"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/dish_title"
+            app:layout_constraintTop_toBottomOf="@id/dish_price" />
+
+        <TextView
+            android:id="@+id/dish_sale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="50% Off"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/dish_title"
+            app:layout_constraintTop_toBottomOf="@id/dish_timing" />
+
+        <TextView
+            android:id="@+id/more_btn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/sale_bck_label"
+            android:gravity="center"
+            android:text="More"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/spacer"
+            app:layout_constraintTop_toBottomOf="@id/dish_sale" />
+
+        <ImageView
+            android:id="@+id/star_icon"
+            android:layout_width="@dimen/dimension20"
+            android:layout_height="@dimen/dimension20"
+            android:layout_marginTop="@dimen/margin6"
+            android:src="@drawable/star_icon"
+            android:layout_marginEnd="@dimen/margin4"
+            app:layout_constraintEnd_toStartOf="@id/rating_label"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/rating_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin6"
+            android:text="0.0"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/star_icon" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/spacer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.7" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

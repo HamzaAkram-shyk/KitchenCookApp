@@ -1,0 +1,19 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="three_hundred">300dp</dimen>
+    <dimen name="dimension100">100dp</dimen>
+    <dimen name="dimension120">120dp</dimen>
+    <dimen name="dimension50">50dp</dimen>
+    <dimen name="chat_field_height">60dp</dimen>
+    <dimen name="dimension20">20dp</dimen>
+    <dimen name="two_hundred">200dp</dimen>
+    <dimen name="two_fifty_hundred">250dp</dimen>
+    <dimen name="four_hundred"></dimen>
+    <dimen name="margin8">8dp</dimen>
+    <dimen name="margin16">16dp</dimen>
+    <dimen name="margin4">4dp</dimen>
+    <dimen name="margin6">6dp</dimen>
+    <dimen name="margin2">2dp</dimen>
+</resources>

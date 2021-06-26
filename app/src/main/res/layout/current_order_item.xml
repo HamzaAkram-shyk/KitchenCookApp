@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin4"
+    app:cardCornerRadius="@dimen/margin4"
+    app:cardElevation="@dimen/margin4">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin6">
+
+        <ImageView
+            android:id="@+id/online_indicator"
+            android:layout_width="@dimen/dimension20"
+            android:layout_height="0dp"
+            android:src="@drawable/online_indicator"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/gif"
+            android:layout_width="@dimen/dimension120"
+            android:layout_height="0dp"
+            android:src="@drawable/cooking"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/chatButton"
+            android:layout_width="@dimen/dimension50"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin2"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            android:src="@drawable/chat_icon"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/online_indicator"
+            app:layout_constraintTop_toBottomOf="@id/online_indicator" />
+
+        <TextView
+            android:id="@+id/orderId"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin6"
+            android:layout_marginEnd="@dimen/margin6"
+            android:text="OrderId: 12324521982121"
+            android:textAlignment="viewStart"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toStartOf="@id/chatButton"
+            app:layout_constraintStart_toEndOf="@id/gif"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/dishName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin4"
+            android:fontFamily="monospace"
+            android:text="Pulao"
+            android:textAlignment="viewStart"
+            android:textColor="@color/accent"
+            android:textSize="@dimen/dimension20"
+            app:layout_constraintEnd_toEndOf="@id/orderId"
+            app:layout_constraintStart_toStartOf="@id/orderId"
+            app:layout_constraintTop_toBottomOf="@id/chatButton" />
+
+        <TextView
+            android:id="@+id/cookTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin6"
+            android:text="Ready in 34 minutes"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/dishName"
+            app:layout_constraintTop_toBottomOf="@id/dishName" />
+
+        <TextView
+            android:id="@+id/payment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Payment:200 Rs"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/dishName"
+            app:layout_constraintTop_toBottomOf="@id/cookTime" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/orderCompleteBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/payment"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Order Complete "
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/orderStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/payment"
+            app:layout_constraintEnd_toEndOf="@id/payment"
+            app:layout_constraintTop_toBottomOf="@id/payment"
+            android:textSize="18sp"
+            android:visibility="gone"
+            android:textColor="@color/green"
+            android:text="Status: Deliver"
+            android:layout_marginTop="@dimen/margin4"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
