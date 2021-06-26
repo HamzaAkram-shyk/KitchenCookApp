@@ -32,6 +32,7 @@ class ChatPortal : AppCompatActivity() {
     private var orderId: String? = null
     private var message: Message? = null
 
+
     companion object {
         const val _key = "key"
         const val mainKey = "mainKey"
@@ -43,6 +44,7 @@ class ChatPortal : AppCompatActivity() {
         setContentView(R.layout.activity_chat_portal)
         store = DataStoreRepository.getInstance(this)
         viewModel = ViewModelProvider(this).get(ChatViewModel::class.java)
+        Toast.makeText(this, "Hello there", Toast.LENGTH_SHORT).show()
         intent.let {
             val from = it.getBooleanExtra(mainKey, false)
             if (!from) {
