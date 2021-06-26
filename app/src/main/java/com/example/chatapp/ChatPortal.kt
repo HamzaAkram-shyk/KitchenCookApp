@@ -143,7 +143,7 @@ class ChatPortal : AppCompatActivity() {
         try {
             val response = RetrofitInstance.api.sendNotification(notification)
             if (response.isSuccessful) {
-                Toast.makeText(this, "Push Notify", Toast.LENGTH_SHORT).show()
+
             } else {
                 Toast.makeText(
                     this,

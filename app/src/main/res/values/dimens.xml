@@ -6,7 +6,7 @@
     <dimen name="dimension100">100dp</dimen>
     <dimen name="dimension120">120dp</dimen>
     <dimen name="dimension50">50dp</dimen>
-    <dimen name="chat_field_height">60dp</dimen>
+    <dimen name="chat_field_height">80dp</dimen>
     <dimen name="dimension20">20dp</dimen>
     <dimen name="two_hundred">200dp</dimen>
     <dimen name="two_fifty_hundred">250dp</dimen>

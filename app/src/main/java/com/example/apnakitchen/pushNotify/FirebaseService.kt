@@ -72,10 +72,11 @@ class FirebaseService : FirebaseMessagingService() {
                     // Here Title is orderId
                     intent = Intent(this, ChatPortal::class.java)
                     intent.putExtra(ChatPortal._key, tittle)
-                    intent.putExtra(ChatPortal.mainKey,true)
+                    intent.putExtra(ChatPortal.mainKey, true)
                     val _title = if (senderType == COOK) "Chef" else "Customer"
-                    Log.d(TAG,"Running...")
-                    showNotification(intent, _title, message)
+                    Log.d(TAG, "Running...")
+                    chatNotification(intent, _title, message)
+
 
                 }
 
@@ -103,6 +104,33 @@ class FirebaseService : FirebaseMessagingService() {
             .setSmallIcon(R.drawable.chef_icon)
             .setContentTitle("$tittle")
             .setContentText("Its an Order")
+            .setStyle(
+                NotificationCompat.BigTextStyle()
+                    .bigText("$message")
+            )
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
+            .setContentIntent(pendingIntent)
+            .setAutoCancel(true)
+            .build()
+        val ringtone = RingtoneManager.getRingtone(this, chatTune)
+        ringtone.play()
+        builder.vibrate = longArrayOf(100, 500, 100, 500)
+        notificationManager.notify(notificationId, builder)
+    }
+
+    private fun chatNotification(intent: Intent, tittle: String, message: String) {
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        val notificationId = Random.nextInt()
+        val pendingIntent = PendingIntent.getActivity(this, 0, intent, FLAG_ONE_SHOT)
+        val notificationManager: NotificationManager =
+            getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        val chatTune =
+            Uri.parse("android.resource://" + packageName + "/" + R.raw.chat_tune)
+        //val soundUri: Uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
+        val builder = NotificationCompat.Builder(this, Notification_Channel_Id)
+            .setSmallIcon(R.drawable.chat_icon)
+            .setContentTitle("$tittle")
+            .setContentText("$message")
             .setStyle(
                 NotificationCompat.BigTextStyle()
                     .bigText("$message")
