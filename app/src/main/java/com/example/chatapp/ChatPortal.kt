@@ -44,7 +44,6 @@ class ChatPortal : AppCompatActivity() {
         setContentView(R.layout.activity_chat_portal)
         store = DataStoreRepository.getInstance(this)
         viewModel = ViewModelProvider(this).get(ChatViewModel::class.java)
-        Toast.makeText(this, "Hello there", Toast.LENGTH_SHORT).show()
         intent.let {
             val from = it.getBooleanExtra(mainKey, false)
             if (!from) {
@@ -71,20 +70,11 @@ class ChatPortal : AppCompatActivity() {
         }
         initialize()
 
-        viewModel.messages.observe(this, Observer {
-            when (it.status) {
-                Status.SUCCESS -> {
-                    adapter.refreshList(it.data!!)
-                    chatRecyclerView.smoothScrollToPosition(it.data!!.size - 1)
-                }
-                Status.ERROR -> {
-                    Toast.makeText(this, "${it.msg}", Toast.LENGTH_SHORT).show()
-                }
-            }
-        })
+        observeChat()
         send_btn.setOnClickListener {
             sendMessage()
         }
+
 
     }
 
@@ -94,6 +84,7 @@ class ChatPortal : AppCompatActivity() {
                 Status.SUCCESS -> {
                     currentOrder = it.data!!
                     viewModel.getChat(currentOrder.orderId!!)
+                    observeChat()
                 }
                 Status.ERROR -> {
                     Toast.makeText(this, "${it.msg}", Toast.LENGTH_SHORT).show()
@@ -139,6 +130,8 @@ class ChatPortal : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         isRunning = true
+
+
     }
 
     override fun onPause() {
@@ -178,6 +171,20 @@ class ChatPortal : AppCompatActivity() {
             ),
             if (senderType == SenderType.CUSTOMER) currentOrder.cookToken else currentOrder.buyerToken
         )
+    }
+
+    private fun observeChat() {
+        viewModel.messages.observe(this, Observer {
+            when (it.status) {
+                Status.SUCCESS -> {
+                    adapter.refreshList(it.data!!)
+                    chatRecyclerView.smoothScrollToPosition(it.data!!.size - 1)
+                }
+                Status.ERROR -> {
+                    Toast.makeText(this, "${it.msg}", Toast.LENGTH_SHORT).show()
+                }
+            }
+        })
     }
 
 
