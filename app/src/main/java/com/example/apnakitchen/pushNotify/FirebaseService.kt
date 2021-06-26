@@ -16,6 +16,7 @@ import com.example.apnakitchen.userdashboard.CustomerDashboard
 import com.example.chatapp.ChatPortal
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
+import kotlin.math.log
 import kotlin.random.Random
 
 // This Service Push Notification When the application is running in the background if this
@@ -33,6 +34,7 @@ class FirebaseService : FirebaseMessagingService() {
         val tittle = p0.data["title"]!!
         val message = p0.data["message"]!!
         val senderType = p0.data["senderType"]!!
+        Log.d(TAG, p0.data["notificationType"]!!)
         when (p0.data["notificationType"]!!) {
             Default -> {
                 if (senderType == CUSTOMER) {
@@ -65,16 +67,18 @@ class FirebaseService : FirebaseMessagingService() {
 
                 }
             }
-            Chat -> {
-                if (ChatPortal.isRunning) {
+            CHAT -> {
+                if (!ChatPortal.isRunning) {
                     // Here Title is orderId
                     intent = Intent(this, ChatPortal::class.java)
                     intent.putExtra(ChatPortal._key, tittle)
                     intent.putExtra(ChatPortal.mainKey,true)
                     val _title = if (senderType == COOK) "Chef" else "Customer"
+                    Log.d(TAG,"Running...")
                     showNotification(intent, _title, message)
 
                 }
+
             }
 
         }

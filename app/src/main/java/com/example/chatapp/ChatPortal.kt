@@ -49,6 +49,7 @@ class ChatPortal : AppCompatActivity() {
             val from = it.getBooleanExtra(mainKey, false)
             if (!from) {
                 currentOrder = it.getParcelableExtra<Order>(_key)!!
+                viewModel.getChat(currentOrder.orderId!!)
             } else {
                 orderId = it.getStringExtra(_key)!!
                 initOrder(orderId!!)
@@ -69,7 +70,7 @@ class ChatPortal : AppCompatActivity() {
 
         }
         initialize()
-        viewModel.getChat(currentOrder.orderId!!)
+
         viewModel.messages.observe(this, Observer {
             when (it.status) {
                 Status.SUCCESS -> {
@@ -92,6 +93,7 @@ class ChatPortal : AppCompatActivity() {
             when (it.status) {
                 Status.SUCCESS -> {
                     currentOrder = it.data!!
+                    viewModel.getChat(currentOrder.orderId!!)
                 }
                 Status.ERROR -> {
                     Toast.makeText(this, "${it.msg}", Toast.LENGTH_SHORT).show()
@@ -148,7 +150,7 @@ class ChatPortal : AppCompatActivity() {
         try {
             val response = RetrofitInstance.api.sendNotification(notification)
             if (response.isSuccessful) {
-
+                Toast.makeText(this, "Push Notify", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(
                     this,
