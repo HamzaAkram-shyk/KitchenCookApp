@@ -16,18 +16,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ApnaKitchen">
-        <activity android:name="com.example.chatapp.ChatPortal"></activity>
+        <activity android:name="com.example.SplashScreen">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.chatapp.ChatPortal" />
         <activity android:name=".userdashboard.CustomerDashboard" />
         <activity android:name=".commonModule.detailActivity.DetailedActivity" />
         <activity
             android:name=".cookdashboard.CookDashboard"
             android:label="@string/title_activity_cook_dashboard" />
         <activity android:name=".authentication.SigIn_SignUp">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
 
