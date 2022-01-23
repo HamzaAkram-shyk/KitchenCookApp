@@ -35,7 +35,7 @@ object AuthRepository {
                 if (it.isSuccessful) {
                     val user = auth.currentUser
                     db.collection(USER_TABLE).document(user.uid)
-                        .get().addOnCompleteListener {
+                        .get().addOnCompleteListener { it ->
                             if (it.isSuccessful) {
                                 val doc = it.result
                                 if (doc!!.exists()) {

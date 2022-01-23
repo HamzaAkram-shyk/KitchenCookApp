@@ -1,5 +1,6 @@
 package com.example.apnakitchen.userdashboard.ui.deliver
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -11,11 +12,18 @@ import com.example.apnakitchen.repository.customerRepository.CustomerRepo
 
 class DeliverOrderViewModel : ViewModel() {
 
-   var  deliverOrder: LiveData<Resource<List<Order>>>
+    var deliverOrder: LiveData<Resource<List<Order>>>? = null
 
     init {
-        val buyerId=AuthRepository.getCurrentUser().uid
-       deliverOrder = CustomerRepo.getCompletedOrder(buyerId, CUSTOMER)
+        try {
+            val buyerId = AuthRepository.getCurrentUser().uid
+            deliverOrder = CustomerRepo.getCompletedOrder(buyerId, CUSTOMER)
+            Log.d("Error", "$buyerId")
+        } catch (e: Exception) {
+            Log.d("Error", e.message.toString())
+        }
+
+
     }
 
 }

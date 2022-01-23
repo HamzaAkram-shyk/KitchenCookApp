@@ -134,7 +134,7 @@ class CreateDishFragment : BottomSheetDialogFragment(), AdapterView.OnItemSelect
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         val text: String = parent?.getItemAtPosition(position).toString()
-        dishHash.put(dishTypeKey, text)
+        dishHash[dishTypeKey] = text
         Toast.makeText(context, "Selected $text", Toast.LENGTH_SHORT).show()
     }
 
@@ -157,7 +157,7 @@ class CreateDishFragment : BottomSheetDialogFragment(), AdapterView.OnItemSelect
         super.onActivityResult(requestCode, resultCode, data)
         if ((requestCode == FIRSTCODE || requestCode == SECONDCODE) && resultCode == Activity.RESULT_OK && data != null) {
             if (requestCode == FIRSTCODE) {
-                imagehash.put(firstImageKey, data.data!!)
+                imagehash[firstImageKey] = data.data!!
                 Glide
                     .with(requireContext())
                     .load(data.data!!)
@@ -165,7 +165,7 @@ class CreateDishFragment : BottomSheetDialogFragment(), AdapterView.OnItemSelect
                 Log.d(TAG, Reuse.getUniqueId(FIRST_IMAGE + "${user.uid}"))
                 counter++
             } else {
-                imagehash.put(secondImageKey, data.data!!)
+                imagehash[secondImageKey] = data.data!!
                 Glide
                     .with(requireContext())
                     .load(data.data!!)

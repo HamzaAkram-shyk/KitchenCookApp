@@ -1,6 +1,7 @@
 package com.example.apnakitchen.imageupload
 
 import android.net.Uri
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.apnakitchen.Utils.Image_Folder
@@ -64,6 +65,43 @@ object Cloud {
     interface CloudResponse {
         fun onSuccess(url: String)
         fun onError(error: String)
+    }
+
+
+    fun sendImageData(
+        data: Uri,
+        imageName: String,
+        response: (String) -> Unit
+    ) {
+        CoroutineScope(Dispatchers.IO).launch {
+            val fileRef = cloudStorage!!.child("$imageName.jpg")
+            var uploadTask: StorageTask<*>
+
+            uploadTask = fileRef.putFile(data!!)
+            uploadTask.continueWithTask(Continuation<UploadTask.TaskSnapshot, Task<Uri>> { task ->
+                if (!task.isSuccessful) {
+                    task.exception?.let {
+                        throw it
+                        response("=")
+                    }
+
+                }
+                return@Continuation fileRef.downloadUrl
+            }).addOnCompleteListener { task ->
+
+                if (task.isSuccessful) {
+                    val downloadUrl = task.result
+                    val url = downloadUrl.toString()
+                    Log.d("ZError",url)
+                    response(url)
+                } else {
+                    response("=")
+                }
+
+            }
+
+        }
+
     }
 
 

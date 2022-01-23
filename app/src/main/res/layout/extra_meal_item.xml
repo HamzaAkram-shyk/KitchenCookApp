@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="4dp"
+    android:layout_marginHorizontal="@dimen/margin8"
+    android:layout_marginVertical="@dimen/margin4"
     app:cardCornerRadius="4dp"
     app:cardElevation="2dp">
 
@@ -58,48 +59,38 @@
             app:layout_constraintTop_toBottomOf="@id/dish_price" />
 
         <TextView
-            android:id="@+id/dish_sale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="50% Off"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@id/dish_title"
-            app:layout_constraintTop_toBottomOf="@id/dish_timing" />
-
-        <TextView
-            android:id="@+id/more_btn"
+            android:id="@+id/instructionField"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp"
+            android:text="50% Off jgyfuyf jhiuh uhiu iuhiu "
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/dish_title"
+            app:layout_constraintTop_toBottomOf="@id/dish_timing"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            android:layout_marginBottom="@dimen/margin4"
+            />
+
+        <TextView
+            android:id="@+id/orderBtn"
+            android:layout_width="0dp"
+            android:layout_height="26dp"
             android:layout_marginTop="4dp"
             android:background="@drawable/sale_bck_label"
             android:gravity="center"
-            android:text="More"
+            android:text="Place Order"
+            android:visibility="gone"
             android:textColor="@android:color/white"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/spacer"
-            app:layout_constraintTop_toBottomOf="@id/dish_sale" />
 
-        <ImageView
-            android:id="@+id/star_icon"
-            android:layout_width="@dimen/dimension20"
-            android:layout_height="@dimen/dimension20"
-            android:layout_marginTop="@dimen/margin6"
-            android:src="@drawable/star_icon"
-            android:layout_marginEnd="@dimen/margin4"
-            app:layout_constraintEnd_toStartOf="@id/rating_label"
-            app:layout_constraintTop_toTopOf="parent" />
+            />
 
-        <TextView
-            android:id="@+id/rating_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/margin6"
-            android:text="0.0"
-            android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/star_icon" />
+
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/spacer"

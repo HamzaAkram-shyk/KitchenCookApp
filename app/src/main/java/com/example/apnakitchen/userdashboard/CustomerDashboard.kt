@@ -19,8 +19,10 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.apnakitchen.R
 import com.example.apnakitchen.Utils.*
+import com.example.apnakitchen.authentication.SigIn_SignUp
 import com.example.apnakitchen.model.Order
 import com.example.apnakitchen.pushNotify.FirebaseService
+import com.example.apnakitchen.repository.authRepository.AuthRepository
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_customer_dashboard.*
 import kotlinx.android.synthetic.main.cook_profile.*
@@ -85,6 +87,25 @@ class CustomerDashboard : AppCompatActivity() {
                 ratingDialog(dataStore.getUserId()!!)
                 Log.d(TAG, "Working... ${dataStore.getOrderQueue()!!}")
             }
+        }
+
+        logoutIcon.setOnClickListener {
+            AuthRepository.signOut().observe(this, Observer {
+                when (it) {
+                    true -> {
+                        lifecycleScope.launch {
+                            DataStoreRepository.getInstance(this@CustomerDashboard).setUserLogin(false)
+                            startActivity(Intent(this@CustomerDashboard, SigIn_SignUp::class.java))
+                            finish()
+                        }
+
+                    }
+                    false -> {
+                        Toast.makeText(this, "Failed In Logout", Toast.LENGTH_SHORT)
+                            .show()
+                    }
+                }
+            })
         }
 
     }

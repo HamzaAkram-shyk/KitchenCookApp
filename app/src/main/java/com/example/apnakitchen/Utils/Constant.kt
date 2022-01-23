@@ -9,8 +9,8 @@ const val DISH_TABLE = "dishDb"
 const val COOK_TABLE = "cookDb"
 const val ORDER_TABLE = "orderDb"
 const val CUSTOMER_TABLE = "customerDb"
-const val RATING_TABLE="ratingDb"
-const val CHAT_TABLE="Chatdb"
+const val RATING_TABLE = "ratingDb"
+const val CHAT_TABLE = "Chatdb"
 
 //
 const val COOK: String = "Cook"
@@ -18,7 +18,7 @@ const val CUSTOMER: String = "Customer"
 const val TAG = "Debug"
 const val NULL = "NULL"
 const val LOADING = "loading"
-const val NO_TOKEN = "no_token"
+const val NO_TOKEN = "sc"
 
 
 //Model Fields//
@@ -36,7 +36,7 @@ const val COOK_TIME = "CookTime"
 const val PRICE = "price"
 const val DETAIL = "detail"
 const val Order_Queue = "orderQueue"
-const val ORDER_ID="orderId"
+const val ORDER_ID = "orderId"
 
 //
 const val ADDRESS = "kitchenAddress"
@@ -53,8 +53,8 @@ const val BuyerId = "buyerId"
 const val BuyerToken = "buyerToken"
 const val CookToken = "cookToken"
 const val TimeStamp = "timeStamp"
-const val DELIVER="deliver"
-const val CHAT="chatId"
+const val DELIVER = "deliver"
+const val CHAT = "chatId"
 
 ////
 
@@ -62,8 +62,8 @@ const val PROFILE_IMAGE = "userDp"
 const val FIRST_IMAGE = "first"
 const val SECOND_IMAGE = "second"
 
-const val Default="default"
-const val Chat="chat"
+const val Default = "default"
+const val Chat = "chat"
 
 
 // Notification
@@ -74,7 +74,9 @@ const val Channel_desc = "This is short Notification"
 
 /// Braodcast Action
 
-const val Notification_broadcast="com.example.apnakitchen.mynotify"
+const val Notification_broadcast = "com.example.apnakitchen.mynotify"
+
+const val Hour_12 = 12
 
 
 

@@ -36,7 +36,7 @@ class DeliverOrder : Fragment() {
     }
 
     private fun fetchDeliverOrders(){
-        viewModel.deliverOrder.observe(viewLifecycleOwner, Observer {
+        viewModel.deliverOrder?.observe(viewLifecycleOwner, Observer {
             when (it.status) {
                 Status.LOADING -> {
                     Reuse.startLoading(mainView.deliverLoading)

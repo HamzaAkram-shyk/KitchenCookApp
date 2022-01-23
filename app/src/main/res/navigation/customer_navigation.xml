@@ -24,7 +24,7 @@
 
     <fragment
         android:id="@+id/navigation_customer_profile"
-        android:name="com.example.apnakitchen.userdashboard.ui.profile.ProfileFragment"
+        android:name="com.example.apnakitchen.userdashboard.ui.profile.UserExtraMealFragment"
         android:label="customer_profile"
         tools:layout="@layout/customer_profile" />
     <fragment
